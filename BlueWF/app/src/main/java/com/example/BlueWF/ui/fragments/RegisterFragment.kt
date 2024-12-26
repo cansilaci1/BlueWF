@@ -22,25 +22,22 @@ class RegisterFragment : Fragment() {
 
     private lateinit var binding: FragmentRegisterBinding
     private val viewModel: RegisterViewModel by viewModels()
-    private lateinit var auth: FirebaseAuth // FirebaseAuth nesnesi
-    private lateinit var db: FirebaseFirestore // Firestore nesnesi
+    private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
 
-        // FirebaseAuth ve Firestore başlat
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
-        // Ülke isimlerini Spinner'a yükle
         viewModel.countryList.observe(viewLifecycleOwner, Observer { countryList ->
             val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, countryList)
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             binding.spinnerCountry.adapter = adapter
         })
 
-        // Kullanıcı bilgilerini al ve Firebase ile kayıt işlemi yap
         binding.btnLogin.setOnClickListener {
             val name = binding.etName.text.toString()
             val email = binding.etUsername.text.toString()
@@ -54,7 +51,6 @@ class RegisterFragment : Fragment() {
             }
         }
 
-        // Hata mesajlarını göster
         viewModel.errorMessage.observe(viewLifecycleOwner, Observer { errorMessage ->
             Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
             Log.e("RegisterFragment", errorMessage)
@@ -88,13 +84,9 @@ class RegisterFragment : Fragment() {
             }
     }
 
-
-
-    // Kullanıcı bilgilerini Firestore'a kaydetme
     private fun saveUserToFirestore(name: String, email: String, country: String) {
         val userId = auth.currentUser?.uid ?: return
 
-        // Kullanıcı verileri
         val user = hashMapOf(
             "id" to userId,
             "name" to name,
@@ -123,11 +115,9 @@ class RegisterFragment : Fragment() {
         }
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Kullanıcı oturumu açık mı kontrol et
         val currentUser = auth.currentUser
         if (currentUser != null) {
             // Kullanıcı oturumu açık, HomeFragment'a yönlendir

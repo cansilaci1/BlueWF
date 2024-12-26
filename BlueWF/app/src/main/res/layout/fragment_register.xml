@@ -58,7 +58,7 @@
         android:id="@+id/etUsername"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:hint="Kullanıcı Adı"
+        android:hint="Mail"
         android:background="@drawable/rounded_edittext_border"
         android:padding="12dp"
         android:inputType="text"

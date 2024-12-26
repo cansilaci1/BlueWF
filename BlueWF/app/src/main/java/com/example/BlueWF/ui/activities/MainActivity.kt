@@ -10,21 +10,24 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.BlueWF.R
 import com.example.BlueWF.network.RetrofitClient
+import com.example.BlueWF.ui.view.GreenHeaderView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private val flaskApi = RetrofitClient.flaskApi // Retrofit API nesnesi
     private lateinit var navController: NavController
     private lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var greenHeaderView: GreenHeaderView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // NavController ve BottomNavigationView'i bağla
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment
         navController = navHostFragment.navController
         bottomNavigationView = findViewById(R.id.bottom_navigation)
+        greenHeaderView = findViewById(R.id.greenHeader)
+
         bottomNavigationView.setupWithNavController(navController)
 
         // Varsayılan olarak menüyü gizle
@@ -32,19 +35,20 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             var isBottomNavVisible = false
+            var isGreenHeaderVisible = false
 
             // Belirli fragment'lar için BottomNavigationView görünür olacak
             if (destination.id == R.id.homeFragment ||
-                destination.id == R.id.profileFragment
-          )
+                destination.id == R.id.profileFragment)
             {
-              isBottomNavVisible = true
-//                showLottieAnimation() // Animasyon fonksiyonu çağrılıyor
+                isBottomNavVisible = true
+                isGreenHeaderVisible = true
+//              showLottieAnimation() // Animasyon fonksiyonu çağrılıyor
             }
 
             // BottomNavigationView görünürlüğünü ayarla
             bottomNavigationView.visibility = if (isBottomNavVisible) View.VISIBLE else View.GONE
-
+            greenHeaderView.visibility = if (isGreenHeaderVisible) View.VISIBLE else View.GONE
             // Animasyon gizleme fonksiyonu
 //            if (!isBottomNavVisible) {
 //                hideLottieAnimation()
@@ -53,10 +57,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun showBottomNavigation() {
-        // Menüyü göster
-        bottomNavigationView.visibility = BottomNavigationView.VISIBLE
-    }
 }
 
         /*  // Arayüzdeki bileşenleri tanımlayın
@@ -157,8 +157,6 @@ class MainActivity : AppCompatActivity() {
                           ).show()
                           Log.e("Hata", t.message ?: "Bilinmeyen hata")
                       }
-
-
                   })
               }
           }*/
