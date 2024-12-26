@@ -3,8 +3,11 @@ package com.example.BlueWF.ui.view
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.drawable.toDrawable
 import com.example.BlueWF.R
 
 class GreenHeaderView @JvmOverloads constructor(
@@ -44,7 +47,7 @@ class GreenHeaderView @JvmOverloads constructor(
     }
 
     private val iconBitmap: Bitmap by lazy {
-        val drawable = context.getDrawable(R.drawable.ic_pine)
+        val drawable = AppCompatResources.getDrawable(context, R.drawable.ic_pine)
         val bitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
         drawable?.setBounds(0, 0, canvas.width, canvas.height)
@@ -64,6 +67,8 @@ class GreenHeaderView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        Log.d("GreenHeaderView", "Drawing with Name: $name, Country: $country")
+
         canvas?.let {
             val width = width.toFloat()
             val height = height.toFloat()
@@ -114,5 +119,8 @@ class GreenHeaderView @JvmOverloads constructor(
             // İkon çizimi
             it.drawBitmap(iconBitmap, width - 150f, height * 0.3f - 50f, null)
         }
+
+
     }
+
 }
