@@ -6,4 +6,160 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.ProfileFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="192dp"
+        android:layout_marginHorizontal="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/roundedCard"
+            android:layout_marginVertical="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="6dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/etCropCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_margin="4dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/rounded_edittext_background"
+                android:hint="Crop Code"
+                android:textSize="16sp"
+                android:textColor="#999999"
+                android:textColorHint="#999999"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/etCountryCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_margin="4dp"
+                app:layout_constraintTop_toBottomOf="@id/etCropCode"
+                app:layout_constraintEnd_toEndOf="@id/etCropCode"
+                app:layout_constraintStart_toStartOf="@id/etCropCode"
+                android:background="@drawable/rounded_edittext_background"
+                android:hint="Country Code"
+                android:textSize="16sp"
+                android:textColor="#999999"
+                android:textColorHint="#999999"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/etYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_margin="4dp"
+                app:layout_constraintTop_toBottomOf="@id/etCountryCode"
+                app:layout_constraintEnd_toEndOf="@id/etCountryCode"
+                app:layout_constraintStart_toStartOf="@id/etCountryCode"
+                android:background="@drawable/rounded_edittext_background"
+                android:hint="Year"
+                android:textSize="16sp"
+                android:textColor="#999999"
+                android:textColorHint="#999999"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/etHarvestedArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_margin="4dp"
+                app:layout_constraintTop_toBottomOf="@id/etYear"
+                app:layout_constraintEnd_toEndOf="@id/etYear"
+                app:layout_constraintStart_toStartOf="@id/etYear"
+                android:background="@drawable/rounded_edittext_background"
+                android:hint="Harvested Area"
+                android:textSize="16sp"
+                android:textColor="#999999"
+                android:textColorHint="#999999"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/etFractionOfArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_margin="4dp"
+                app:layout_constraintTop_toBottomOf="@id/etHarvestedArea"
+                app:layout_constraintEnd_toEndOf="@id/etHarvestedArea"
+                app:layout_constraintStart_toStartOf="@id/etHarvestedArea"
+                android:background="@drawable/rounded_edittext_background"
+                android:hint="Fraction of harvested area under irrigation"
+                android:textSize="16sp"
+                android:textColor="#999999"
+                android:textColorHint="#999999"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/etProductionAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_margin="4dp"
+                app:layout_constraintTop_toBottomOf="@id/etFractionOfArea"
+                app:layout_constraintEnd_toEndOf="@id/etFractionOfArea"
+                app:layout_constraintStart_toStartOf="@id/etFractionOfArea"
+                android:background="@drawable/rounded_edittext_background"
+                android:hint="Amount Of Production"
+                android:textSize="16sp"
+                android:textColor="#999999"
+                android:textColorHint="#999999"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/etCropYield"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_margin="4dp"
+                app:layout_constraintTop_toBottomOf="@id/etProductionAmount"
+                app:layout_constraintEnd_toEndOf="@id/etProductionAmount"
+                app:layout_constraintStart_toStartOf="@id/etProductionAmount"
+                android:background="@drawable/rounded_edittext_background"
+                android:hint="Crop Yield"
+                android:textSize="16sp"
+                android:textColor="#999999"
+                android:textColorHint="#999999"
+                android:inputType="number"/>
+
+            <Button
+                android:id="@+id/analyzeButton"
+                android:layout_margin="4dp"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/etCropYield"
+                app:layout_constraintEnd_toEndOf="@id/etCropYield"
+                app:layout_constraintStart_toStartOf="@id/etCropYield"
+                android:background="@drawable/oval_button"
+                android:text="Analiz"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
