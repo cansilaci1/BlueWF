@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Temel Tema -->
+    <style name="Theme.MyApp" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Varsayılan renk ayarları -->
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorSecondary">@color/secondary_color</item>
+        <!-- Ripple ve Active Indicator Özelleştirmesi -->
+        <item name="bottomNavigationStyle">@style/CustomBottomNavigationStyle</item>
+    </style>
+
+    <!-- Özelleştirilmiş BottomNavigationView Stili -->
+    <style name="CustomBottomNavigationStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemRippleColor">@android:color/transparent</item> <!-- Ripple kaldırıldı -->
+    </style>
+    <!-- Aktif Gösterge Stili -->
+</resources>

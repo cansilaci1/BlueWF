@@ -5,4 +5,8 @@
     <color name="darkGreen">#0A3832</color>
     <color name="limeGreen">#BBD409</color>
     <color name="teal">#008080</color>
+    <color name="primary_color">#0A3832</color> <!-- Ana tema rengi -->
+    <color name="secondary_color">#FFFFFF</color> <!-- İkincil tema rengi -->
+    <color name="bottom_nav_active_color">#FFFFFF</color> <!-- Seçili öğe rengi -->
+    <color name="bottom_nav_inactive_color">#B0BEC5</color>
 </resources>

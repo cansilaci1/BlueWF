@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.graphics.drawable.toDrawable
 import com.example.BlueWF.R
 
 class GreenHeaderView @JvmOverloads constructor(
@@ -88,7 +87,7 @@ class GreenHeaderView @JvmOverloads constructor(
             val textStartY = height * 0.3f
 
             // "Merhaba" ve isim metnini yatay olarak yan yana çiz
-            val greetingText = "Merhaba,"
+            val greetingText = "Hi,"
             val greetingWidth = greetingPaint.measureText(greetingText)
             it.drawText(
                 greetingText,
