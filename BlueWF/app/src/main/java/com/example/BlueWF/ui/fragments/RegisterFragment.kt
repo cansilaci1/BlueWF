@@ -113,7 +113,12 @@ class RegisterFragment : Fragment() {
             putString("country", country)
             apply()
         }
+
+        // Kullanıcı bilgilerini kaydettikten sonra GreenHeaderView'i güncelle
+        val greenHeaderView = requireActivity().findViewById<com.example.BlueWF.ui.view.GreenHeaderView>(R.id.greenHeader)
+        greenHeaderView?.updateUserInfo()
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

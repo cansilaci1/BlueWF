@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "114262202892",
+    "project_id": "bluewf-9d50b",
+    "storage_bucket": "bluewf-9d50b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114262202892:android:0478befacf49ecd7c22c29",
+        "android_client_info": {
+          "package_name": "com.example.demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZOnIGy9mE1j1Ic4ItMdHebL-4Mj2Y-rk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

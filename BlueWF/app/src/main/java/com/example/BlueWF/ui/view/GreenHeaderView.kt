@@ -62,6 +62,13 @@ class GreenHeaderView @JvmOverloads constructor(
         val sharedPref = context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
         name = sharedPref.getString("name", "Ad Yok")
         country = sharedPref.getString("country", "Ülke Yok")
+
+    }
+    fun updateUserInfo() {
+        val sharedPref = context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+        name = sharedPref.getString("name", "Ad Yok")
+        country = sharedPref.getString("country", "Ülke Yok")
+        invalidate() // Yeniden çizim yap
     }
 
     override fun onDraw(canvas: Canvas) {
