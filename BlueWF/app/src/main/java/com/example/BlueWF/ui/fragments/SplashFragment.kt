@@ -16,9 +16,6 @@ class SplashFragment : Fragment() {
 
         binding = FragmentSplashBinding.inflate(inflater, container, false)
 
-        binding.button.setOnClickListener{
-            Navigation.findNavController(it).navigate(R.id.action_splashFragment_to_registerFragment)
-        }
         return binding.root
     }
 

@@ -15,6 +15,7 @@ object RetrofitClient {
             .build()
             .create(ApiService::class.java)
     }
+
     private const val COUNTRY_URL = "https://restcountries.com/v3.1/" // Ensure it ends with "/"
 
     val countryApi: ApiService by lazy {

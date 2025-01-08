@@ -150,19 +150,19 @@
                 android:textColorHint="#999999"
                 android:inputType="numberDecimal"/>
 
-            <Button
-                android:id="@+id/btnClear"
+            <TextView
+                android:id="@+id/tvResult"
                 android:layout_width="116dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:backgroundTint="#4731D3"
-                android:text="Clear"
-                android:textColor="#FFFFFF"
+                android:backgroundTint="#BBD409"
+                android:textColor="#BBD409"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toStartOf="@id/btnAnalyse"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/etCropYield"
-                app:layout_constraintTop_toBottomOf="@id/etCropYield" />
+                app:layout_constraintEnd_toEndOf="@id/etCropYield"
+                app:layout_constraintStart_toEndOf="@id/btnAnalyse"
+                app:layout_constraintTop_toBottomOf="@id/etCropYield"
+                />
 
             <Button
                 android:id="@+id/btnAnalyse"
@@ -173,10 +173,11 @@
                 android:text="Analyse"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/tvResult"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/etCropYield"
-                app:layout_constraintStart_toEndOf="@id/btnClear"
-                app:layout_constraintTop_toBottomOf="@id/etCropYield" />
+                app:layout_constraintStart_toStartOf="@id/etCropYield"
+                app:layout_constraintTop_toBottomOf="@id/etCropYield"
+                 />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
