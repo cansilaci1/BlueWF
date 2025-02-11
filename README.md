@@ -12,8 +12,6 @@ By integrating real-time data from multiple sources, the app provides smart reco
 - Real-time data processing  
 - API integration  
 
-## Screenshots
-
 <img width="342" alt="Screenshot 2025-02-11 at 11 33 13 AM" src="https://github.com/user-attachments/assets/fc02012f-c91d-44eb-b29e-c0b2d6dc564e" />
 
 
